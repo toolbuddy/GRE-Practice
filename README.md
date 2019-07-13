@@ -12,4 +12,4 @@ A web platform to practice GRE
 
 ## Documents
 
-* UI Design
+* [UI Design](docs/UI.pdf)
