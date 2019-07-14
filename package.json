@@ -1,0 +1,38 @@
+{
+  "name": "gre-practice",
+  "version": "1.0.0",
+  "description": "A web platform to practice GRE",
+  "main": "src/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --mode=development --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toolbuddy/GRE-Practice.git"
+  },
+  "author": "Luis Hsu",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/toolbuddy/GRE-Practice/issues"
+  },
+  "homepage": "https://github.com/toolbuddy/GRE-Practice#readme",
+  "dependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
+    "vue-router": "^3.0.7",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.35.3",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.5"
+  }
+}
