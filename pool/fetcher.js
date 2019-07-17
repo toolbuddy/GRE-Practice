@@ -24,7 +24,7 @@ const argumentRequest = https.request(`https://www.ets.org/gre/revised_general/p
         intent,
       }
     })
-    writeFile(Path.resolve(__dirname, 'argument.json'), JSON.stringify(paragraphs), err => {
+    writeFile(Path.resolve(__dirname, 'argument.js'),  `module.exports = ${JSON.stringify(paragraphs, null, " ")}`, err => {
       if(err){
         console.error(`Error fetching arguments: ${err.toString()}`);
       }else{
@@ -56,7 +56,7 @@ const issueRequest = https.request(`https://www.ets.org/gre/revised_general/prep
         intent,
       }
     })
-    writeFile(Path.resolve(__dirname, 'issue.json'), JSON.stringify(paragraphs), err => {
+    writeFile(Path.resolve(__dirname, 'issue.js'), `module.exports = ${JSON.stringify(paragraphs, null, " ")}`, err => {
       if(err){
         console.error(`Error fetching issue: ${err.toString()}`);
       }else{
