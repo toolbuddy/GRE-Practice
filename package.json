@@ -25,6 +25,7 @@
     "babel-loader": "^8.0.6",
     "bootstrap-vue": "^2.0.0-rc.26",
     "css-loader": "^3.0.0",
+    "es6-promise": "^4.2.8",
     "html-webpack-plugin": "^3.2.0",
     "node-html-parser": "^1.1.16",
     "node-sass": "^4.12.0",
@@ -33,6 +34,7 @@
     "vue-loader": "^15.7.0",
     "vue-router": "^3.0.7",
     "vue-template-compiler": "^2.6.10",
+    "vuex": "^3.1.1",
     "webpack": "^4.35.3",
     "webpack-dev-server": "^3.7.2"
   },
