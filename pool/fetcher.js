@@ -17,12 +17,10 @@ const argumentRequest = https.request(`https://www.ets.org/gre/revised_general/p
     let paragraphs = content.split("<div class=\"divider-50\"><hr /><\/div>");
     paragraphs.shift();
     paragraphs = paragraphs.map((str, id) => {
-      let intent = str.match(/<div class=\"indented\"\>((.|\n)*)<\/div>/)[1].replace(/(\n<p>|<\/p>)/g, "")
-      str = str.replace(/(\n?<p>|<\/p>\n?)/g, "")
       return {
         id,
         description: str.substring(0, str.indexOf("<div class=\"indented\">")),
-        intent,
+        intent: str.match(/<div class=\"indented\"\>((.|\n)*)<\/div>/)[1],
       }
     })
     writeFile(Path.resolve(__dirname, 'argument.js'),  `module.exports = ${JSON.stringify(paragraphs, null, " ")}`, err => {
@@ -50,12 +48,10 @@ const issueRequest = https.request(`https://www.ets.org/gre/revised_general/prep
     let paragraphs = content.split("<div class=\"divider-50\"><hr /><\/div>");
     paragraphs.shift();
     paragraphs = paragraphs.map((str, id) => {
-      let intent = str.match(/<div class=\"indented\"\>((.|\n)*)<\/div>/)[1].replace(/(\n<p>|<\/p>)/g, "")
-      str = str.replace(/(\n?<p>|<\/p>\n?)/g, "")
       return {
         id,
         description: str.substring(0, str.indexOf("<div class=\"indented\">")),
-        intent,
+        intent: str.match(/<div class=\"indented\"\>((.|\n)*)<\/div>/)[1],
       }
     })
     writeFile(Path.resolve(__dirname, 'issue.js'), `module.exports = ${JSON.stringify(paragraphs, null, " ")}`, err => {

@@ -11,6 +11,7 @@ Vue.use(BootstrapVue);
 Vue.use(Vuex);
 
 import Index from './components/Index.vue';
+import Practice from './components/Practice.vue';
 import store from './store';
 import ArgumentPool from '../pool/argument';
 import IssuePool from '../pool/issue';
@@ -18,10 +19,6 @@ import IssuePool from '../pool/issue';
 const router = new VueRouter({
   mode: 'history',
   routes:[
-    {
-      path: '/',
-      redirect: "/argument",
-    },
     {
       path: '/argument',
       component: Index,
@@ -37,7 +34,41 @@ const router = new VueRouter({
         mode: "issue",
         questions: IssuePool,
       }
-    }
+    },
+    {
+      path: "/practice-argument",
+      component: Practice,
+      props: {
+        mode: "argument",
+        questions: ArgumentPool,
+      },
+      beforeEnter: (_, __, next) => {
+        if(store.state.questionId == -1){
+          next('/argument');
+        }else{
+          next();
+        }
+      }
+    },
+    {
+      path: '/practice-issue',
+      component: Practice,
+      props: {
+        mode: "issue",
+        questions: IssuePool,
+      },
+      beforeEnter: (_, __, next) => {
+        if(store.state.questionId == -1){
+          next('/issue');
+        }else{
+          next();
+        }
+      }
+    },
+    {
+      path: '*',
+      redirect: "/argument",
+    },
   ]
 })
 

@@ -1,6 +1,7 @@
 const Path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -16,6 +17,9 @@ module.exports = {
       template: 'src/index.ejs',
     }),
     new VueLoaderPlugin(),
+    new CopyPlugin([
+      { from: 'static', to: '' },
+    ]),
   ],
   module: {
     rules: [

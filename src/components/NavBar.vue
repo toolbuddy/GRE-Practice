@@ -4,8 +4,8 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <router-link to="/argument" tag="b-nav-item" :active="mode == 'argument'">Argument</router-link>
-        <router-link to="/issue"  tag="b-nav-item" :active="mode == 'issue'">Issue</router-link>
+        <router-link class="nav-link" to="/argument" tag="b-nav-item" :active="mode == 'argument'">Argument</router-link>
+        <router-link class="nav-link" to="/issue"  tag="b-nav-item" :active="mode == 'issue'">Issue</router-link>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
         <b-button variant="outline-light">Helps</b-button>
@@ -22,4 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
+.nav-link{
+  color: #fff;
+}
 </style>
