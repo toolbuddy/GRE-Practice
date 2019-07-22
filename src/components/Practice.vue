@@ -13,7 +13,7 @@
             <b-button variant="primary" @click="toggleTimer">{{timer ? "Stop" : "Start"}}</b-button>
             <b-button v-if="!timer" variant="danger" @click="resetTimer">Reset</b-button>
           </b>
-          <b-button variant="success" @click="finishPractice">Finish practice</b-button>
+          <b-button v-if="timer" variant="success" @click="finishPractice">Finish practice</b-button>
         </b-row>
         <b-row id="answer-wrapper">
           <textarea id="answer-input" v-model="answer"></textarea>

@@ -17,7 +17,6 @@ import ArgumentPool from '../pool/argument';
 import IssuePool from '../pool/issue';
 
 const router = new VueRouter({
-  mode: 'history',
   routes:[
     {
       path: '/argument',
