@@ -96,7 +96,7 @@ export default {
     },
     exportDocx(){
       let parentThis = this;
-      getBinaryContent("/template.docx", function(err, templateDocx){
+      getBinaryContent("https://toolbuddy.github.io/GRE-Practice/template.docx", function(err, templateDocx){
         let nowDate = new Date();
         let questionObj = parentThis.$props.questions.find(question => question.id == parentThis.questionId);
         let objData = {
