@@ -31,7 +31,7 @@
     "es6-promise": "^4.2.8",
     "file-saver": "^2.0.2",
     "html-webpack-plugin": "^3.2.0",
-    "jszip": "^2.6.1",
+    "jszip": "^2.7.0",
     "jszip-utils": "^0.1.0",
     "node-html-parser": "^1.1.16",
     "node-sass": "^4.12.0",
